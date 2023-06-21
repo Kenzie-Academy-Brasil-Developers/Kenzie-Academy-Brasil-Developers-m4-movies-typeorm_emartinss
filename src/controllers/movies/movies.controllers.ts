@@ -9,7 +9,6 @@ import { Movie } from "../../entities/movies.entity";
 
 export const createMoviesControllers = async (req: Request, res: Response): Promise<Response | void> => {
   const bodyMovie: IMoviesCreate = res.locals.validated;
-  console.log(bodyMovie)
   const movie: Movie = await createMoviesServices(bodyMovie);
 
   res.status(201).json(movie);

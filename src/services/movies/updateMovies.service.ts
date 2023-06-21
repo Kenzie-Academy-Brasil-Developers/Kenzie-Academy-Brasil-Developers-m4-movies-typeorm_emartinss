@@ -4,7 +4,6 @@ import { AppDataSource } from "../../data-source";
 import { Movie } from "../../entities/movies.entity";
 
 export const updateMoviesService = async (movieId: string, movieBody: IMoviesCreate): Promise<Movie | null> => {
-  console.log(movieId)
   const movieRepo: Repository<Movie> = AppDataSource.getRepository(Movie);
   await movieRepo.update(movieId, movieBody);
 

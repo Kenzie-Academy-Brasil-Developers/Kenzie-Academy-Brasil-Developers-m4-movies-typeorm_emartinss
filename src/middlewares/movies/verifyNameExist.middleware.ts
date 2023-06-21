@@ -7,7 +7,6 @@ import AppError from "../../error";
 export const verifyNameExistUpdate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   const movieRepo: Repository<Movie> = AppDataSource.getRepository(Movie);
   const movie: Movie | null = await movieRepo.findOneBy({ id: parseInt(req.params.id) });
-  console.log(movie);
 
   if (movie!.name === req.body.name) {
     throw new AppError("Movie already exists.", 409);
@@ -19,7 +18,6 @@ export const verifyNameExistUpdate = async (req: Request, res: Response, next: N
 export const verifyNameExistCreate = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
   const movieRepo: Repository<Movie> = AppDataSource.getRepository(Movie);
   const movie: Movie | null = await movieRepo.findOneBy({ name: req.body.name });
-  console.log(movie);
 
   if (movie) {
     throw new AppError("Movie already exists.", 409);
