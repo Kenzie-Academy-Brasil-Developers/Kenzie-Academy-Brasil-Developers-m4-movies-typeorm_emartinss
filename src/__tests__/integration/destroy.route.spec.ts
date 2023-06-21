@@ -2,9 +2,10 @@ import supertest from 'supertest'
 import { DataSource } from 'typeorm'
 import app from '../../app'
 import { AppDataSource } from '../../data-source'
-import { Movie } from '../../entities'
+
 import { iMovieRepo } from '../interfaces'
 import { deleteRouteMock } from '../mocks'
+import { Movie } from '../../entities/movies.entity'
 
 describe('DELETE /movies', () => {
     let connection: DataSource

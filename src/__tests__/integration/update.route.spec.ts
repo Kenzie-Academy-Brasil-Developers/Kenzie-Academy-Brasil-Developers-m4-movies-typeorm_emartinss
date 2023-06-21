@@ -2,9 +2,9 @@ import supertest from 'supertest'
 import { DataSource } from 'typeorm'
 import app from '../../app'
 import { AppDataSource } from '../../data-source'
-import { Movie } from '../../entities'
 import { iMovieRepo } from '../interfaces'
 import { updateRouteMock } from '../mocks'
+import { Movie } from '../../entities/movies.entity'
 
 describe('PATCH /movies', () => {
     let connection: DataSource

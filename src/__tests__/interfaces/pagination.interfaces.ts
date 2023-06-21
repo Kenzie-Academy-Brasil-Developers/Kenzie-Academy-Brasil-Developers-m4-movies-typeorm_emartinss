@@ -1,4 +1,4 @@
-import { Movie } from '../../entities'
+import { Movie } from "../../entities/movies.entity";
 
 interface iPagination {
     prevPage: string | null
