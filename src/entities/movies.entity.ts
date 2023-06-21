@@ -5,15 +5,15 @@ export class Movie {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: "varchar", length: 50, unique: true })
+  @Column({ length: 50, unique: true })
   name: string;
 
   @Column({ type: "text", nullable: true })
-  description: string;
+  description?: string | null | undefined;
 
-  @Column({ type: "int4" })
+  @Column({ type: "integer" })
   duration: number;
 
-  @Column({ type: "int4" })
+  @Column({ type: "integer" })
   price: number;
 }

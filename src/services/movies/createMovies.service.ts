@@ -4,9 +4,9 @@ import { AppDataSource } from "../../data-source";
 import { Movie } from "../../entities/movies.entity";
 
 export const createMoviesServices = async (bodyMovie: IMoviesCreate) => {
-    console.log(bodyMovie)
-  const movieRepo: Repository<iMovie> = AppDataSource.getRepository(Movie);
-  const newMovie: iMovie = movieRepo.create(bodyMovie);
+  
+  const movieRepo: Repository<Movie> = AppDataSource.getRepository(Movie);
+  const newMovie: Movie = movieRepo.create(bodyMovie);
 
   await movieRepo.save(newMovie);
 

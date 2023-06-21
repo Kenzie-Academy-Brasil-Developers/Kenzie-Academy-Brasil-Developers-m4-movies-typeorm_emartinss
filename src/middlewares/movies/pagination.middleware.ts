@@ -5,14 +5,13 @@ export const pagination = (req: Request, res: Response, next: NextFunction): voi
   const queryPerPage: number = Number(req.query.perPage);
 
   const page: number = queryPage && queryPage > 1 ? queryPage : 1;
-  const perPage: number =
-    queryPerPage && queryPerPage <= 5 && queryPerPage > 0 ? queryPerPage : 5;
+  const perPage: number = queryPerPage && queryPerPage <= 5 && queryPerPage > 0 ? queryPerPage : 5;
 
   const querySort: any = req.query.sort;
   const queryOrder: any = req.query.order;
 
   const orderOptions: Array<string> = ["asc", "desc"];
-  const sortOptions: Array<string> = ["price"];
+  const sortOptions: Array<string> = ["price", "duration"];
 
   let sort: string;
   let order: string;
